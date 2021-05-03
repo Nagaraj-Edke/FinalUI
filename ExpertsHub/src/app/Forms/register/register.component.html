@@ -8,7 +8,7 @@
             </div>
 
             <div class="col-md-6  order-sm-2 formBox">
-                <form [formGroup]="registerForm" class="px-md-5"  novalidate [class.d-none]="submitted || existEmail" (ngSubmit)="onSubmit()">
+                <form [formGroup]="registerForm" class="px-md-5" novalidate [class.d-none]="submitted || existEmail" (ngSubmit)="onSubmit()">
                     <h1 class="multicolortext title my-2 text-center form-check-label">Sign Up</h1>
 
                     <div class="media1">
@@ -92,6 +92,24 @@
 
                 <br>
 
+            </div>
+        </div>
+    </div>
+
+    <div class="container" *ngIf="submitted">
+        <div class="row">
+            <div class="col-12">
+                <h4 class="text-dark">Form Succesfully Submitted Thank You!!!! <br>Please Login <br></h4>
+                <button routerLink="login" class="btn btn-success ml-4">Login</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" *ngIf="existEmail" >
+        <div class="row">
+            <div class="col-12">
+                <h4 class="text-dark">This Mail is already Exist <br>Please Login <br> </h4>
+                <button routerLink="login" class="btn btn-success ml-4 mt-4">Login</button>
             </div>
         </div>
     </div>

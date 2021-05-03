@@ -21,6 +21,7 @@
                                             <div class="flex-fill">
                                                 <input type="text" [class.is-invalid]="email.invalid&&email.touched"
                                                     formControlName="email" class="form-control" placeholder="Enter email">
+                                                <small *ngIf="invalidEmail" class="text-danger">Invalid Email Please Register</small>
                                                 <div class="text-danger" *ngIf="email.invalid&&email.touched">
                                                     <small *ngIf="email.errors.required">email is required</small>
                                                     <small *ngIf="email.errors.email">Enter Valid email</small>
@@ -34,6 +35,7 @@
                                                 <input type="password" [class.is-invalid]="password.invalid&&password.touched"
                                                     formControlName="password" class="form-control"
                                                     placeholder="Enter password">
+                                                <small *ngIf="invalidPassword" class="text-danger">Invalid Password</small>
                                                 <div class="text-danger" *ngIf="password.invalid&&password.touched">
                                                     <small *ngIf="password.errors.required">passowrd is required</small>
                                                     <!-- <small *ngIf="password.errors.minlength">Enter minimum 8 length charcter</small>                                     -->
